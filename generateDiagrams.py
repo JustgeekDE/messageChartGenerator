@@ -2,20 +2,20 @@
 from subprocess import Popen, PIPE, STDOUT
 
 commandsA = [
-  'userA <- qloud [label="sync", linecolour="blue"];',
+  'userA <- cloud [label="sync", linecolour="blue"];',
   'userA rbox userA [label="edit", textbgcolour="aqua" ];',
-  'userA -> qloud [label="sync", linecolour="blue"];',
-  'userA <- qloud [label="sync", linecolour="blue"];'
+  'userA -> cloud [label="sync", linecolour="blue"];',
+  'userA <- cloud [label="sync", linecolour="blue"];'
 ]
 
 commandsB = [
-  'userB <- qloud [label="sync", linecolour="blue"];',
+  'userB <- cloud [label="sync", linecolour="blue"];',
   'userB rbox userB [label="delete", textbgcolour="red" ];',
-  'userB -> qloud [label="sync", linecolour="blue"];',
-  'userB <- qloud [label="sync", linecolour="blue"];'
+  'userB -> cloud [label="sync", linecolour="blue"];',
+  'userB <- cloud [label="sync", linecolour="blue"];'
 ]
 
-header = 'msc { hscale = "2";\nuserA,qloud,userB;\nuserA box userB [label="has machine", textbgcolour="green"]; '
+header = 'msc { hscale = "2";\nuserA,cloud,userB;\nuserA box userB [label="synced data", textbgcolour="green"]; '
 footer = ' userA note userB [label="?"]; }'
 
 def popAndRecurse(listToPop, otherList):
